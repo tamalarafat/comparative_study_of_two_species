@@ -1,0 +1,1 @@
+Data Athaliana in cluster 18 have less than 10 cells. For Athaliana, DE analysis between groups or replicates in cluster 18 was not performed.
