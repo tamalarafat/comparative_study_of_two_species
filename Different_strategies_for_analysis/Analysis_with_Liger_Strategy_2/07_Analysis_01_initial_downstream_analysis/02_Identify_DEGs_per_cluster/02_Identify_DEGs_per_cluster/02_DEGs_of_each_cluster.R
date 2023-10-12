@@ -7,10 +7,10 @@ scripts_list_2 <- list.files("/home/ytamal2/Documents/2023/PhD_projects_Yasir/sc
 sapply(scripts_list_2, source, .GlobalEnv)
 
 # Storing directory
-res_dir = "/netscratch/dep_tsiantis/grp_laurent/tamal/2023/Analyses/comparative_study_of_two_species/Liger_Analyses/Liger_Analysis_strategy_5/On_coefficient"
+res_dir = "/netscratch/dep_tsiantis/grp_laurent/tamal/2023/Analyses/comparative_study_of_two_species/Liger_Analyses/Liger_Analysis_strategy_5/On_coefficient/For_Factorization_K_48"
 
 # load the seurat object
-load("/biodata/dep_tsiantis/grp_laurent/tamal/2023/comparative_study_of_two_species/Liger_Analyses/Liger_Analysis_strategy_5/On_coefficient/Seurat_objects/seurat_object_of_K_50.RData")
+load("/biodata/dep_tsiantis/grp_laurent/tamal/2023/comparative_study_of_two_species/Liger_Analyses/Liger_Analysis_strategy_5/On_coefficient/Seurat_objects/seurat_object_of_K_48.RData")
 
 Idents(integrated.data) <- "RNA_snn_res.0.2"
 

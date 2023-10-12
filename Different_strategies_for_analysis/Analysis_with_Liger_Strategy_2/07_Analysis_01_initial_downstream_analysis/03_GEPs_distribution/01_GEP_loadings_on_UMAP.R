@@ -10,7 +10,7 @@ sapply(scripts_list_2, source, .GlobalEnv)
 grp_col = c("#FD6467", "#00A08A", "#F98400", "#046C9A", "#075149FF", "#FFA319FF", "#00BF81", "#767676FF", "#FD8CC1FF")
 
 # load the seurat object
-load("/biodata/dep_tsiantis/grp_laurent/tamal/2023/comparative_study_of_two_species/Liger_Analyses/Liger_Analysis_strategy_5/On_coefficient/Seurat_objects/seurat_object_of_K_50.RData")
+load("/biodata/dep_tsiantis/grp_laurent/tamal/2023/comparative_study_of_two_species/Liger_Analyses/Liger_Analysis_strategy_5/On_coefficient/Seurat_objects/seurat_object_of_K_48.RData")
 
 Idents(integrated.data) <- "RNA_snn_res.0.2"
 

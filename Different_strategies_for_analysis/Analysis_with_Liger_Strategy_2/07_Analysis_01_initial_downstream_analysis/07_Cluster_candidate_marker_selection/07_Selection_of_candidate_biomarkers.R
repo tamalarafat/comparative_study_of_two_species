@@ -1,22 +1,28 @@
-# Load all the functions stored in scripts from the folder housing the scripts
-scripts_list_markers <- list.files("/home/ytamal2/Documents/2023/PhD_projects_Yasir/scExplorer/Functions/Functions_marker_identification", pattern = "*.R$", full.names = TRUE) 
-sapply(scripts_list_markers, source, .GlobalEnv)
+projects_dir = "/home/ytamal2/Documents/2023/PhD_projects_Yasir/"
+
+# projects_dir = "~/Documents/Projects_Yasir/"
 
 # Load all the functions stored in scripts from the folder housing the scripts
-scripts_list_2 <- list.files("/home/ytamal2/Documents/2023/PhD_projects_Yasir/scExplorer/Functions/Functions_matrix_manipulation", pattern = "*.R$", full.names = TRUE) 
+scripts_list_1 <- list.files(paste0(projects_dir, "scExplorer/Functions/Functions_marker_identification"), pattern = "*.R$", full.names = TRUE)
+sapply(scripts_list_1, source, .GlobalEnv)
+
+# Load all the functions stored in scripts from the folder housing the scripts
+scripts_list_2 <- list.files(paste0(projects_dir, "scExplorer/Functions/Functions_matrix_manipulation"), pattern = "*.R$", full.names = TRUE)
 sapply(scripts_list_2, source, .GlobalEnv)
 
 # Load the Seurat object
-load("/netscratch/dep_tsiantis/common/Yasir/Comparative_species_analysis/Liger_analysis/Liger_analysis_without_cell_cycle_effect/Analysis_objects/seurat_object_of_K_50_without_CC.RData")
+load("/biodata/dep_tsiantis/grp_laurent/tamal/2023/comparative_study_of_two_species/Liger_Analyses/Liger_Analysis_strategy_5/On_coefficient/Seurat_objects/seurat_object_of_K_48.RData")
 
-# Directory path to store the outputs
-storing_dir = "/home/ytamal2/Documents/2023/PhD_projects_Yasir/comparative_study_of_two_species/Analysis_with_Liger/08_Analysis_02_controlling_for_cell_cycle_effect/Analysis_outputs"
+Idents(integrated.data) <- "RNA_snn_res.0.2"
 
-# Path to the DEG files - differentially genes using the "Findmarkers" function (Seurat) per cluster
-DEG_dir = "/home/ytamal2/Documents/2023/PhD_projects_Yasir/comparative_study_of_two_species/Analysis_with_Liger/08_Analysis_02_controlling_for_cell_cycle_effect/Analysis_outputs/Differentially_expressed_genes/Conserved_marker_grouped_by_Species/Conserved_markers_DEtest_wilcox"
+# Directory path -  store the outputs on this directory
+storing_dir = paste0(projects_dir, "comparative_study_of_two_species/Different_strategies_for_analysis/Analysis_with_Liger_Strategy_2/07_Analysis_01_initial_downstream_analysis/Analysis_outputs")
+
+# Dir - containing the DEG files
+DEG_dir = paste0(projects_dir, "comparative_study_of_two_species/Different_strategies_for_analysis/Analysis_with_Liger_Strategy_2/07_Analysis_01_initial_downstream_analysis/Analysis_outputs/Differentially_expressed_genes/Conserved_DEGs_grouped_by_Species/Conserved_markers_DEtest_wilcox")
 
 # Load the TFs list 
-at_TFs = read.delim("/home/ytamal2/Documents/2023/PhD_projects_Yasir/comparative_study_of_two_species/Analysis_with_Liger/Analysis_objects/Annotation_files/TFs_list/Ath_TF_list.txt", header = 1)
+at_TFs = read.delim(paste0(projects_dir, "comparative_study_of_two_species/Analysis_with_Liger/Analysis_objects/Annotation_files/TFs_list/Ath_TF_list.txt"), header = 1)
 at_TFs = unique(at_TFs$Gene_ID)
 
 # Cluster IDs of the active clustering solution
@@ -48,26 +54,26 @@ if (is.character(DEG_dir)) {
 }
 
 # For each cluster ID define the GEP IDs from which the candidate markers will be selected
-GEP_IDs = list(cluster_0 = c(20, 35), 
-               cluster_1 = 35, 
-               cluster_2 = 23, 
-               cluster_3 = 43, 
-               cluster_4 = c(20, 35), 
-               cluster_5 = 25, 
-               cluster_6 = c(24, 43), 
-               cluster_7 = 35, 
-               cluster_8 = 19, 
-               cluster_9 = 2, 
-               cluster_10 = 11, 
-               cluster_11 = 35, 
-               cluster_12 = 7, 
-               cluster_13 = 17, 
-               cluster_14 = 1, 
-               cluster_15 = 46, 
-               cluster_16 = 15, 
-               cluster_17 = 5, 
-               cluster_18 = 9, 
-               cluster_19 = 33)
+GEP_IDs = list(cluster_0 = 38, 
+               cluster_1 = 22, 
+               cluster_2 = c(12, 35), 
+               cluster_3 = c(2, 19, 22, 36), 
+               cluster_4 = 44, 
+               cluster_5 = 4, 
+               cluster_6 = 25, 
+               cluster_7 = 37, 
+               cluster_8 = c(2, 9, 12), 
+               cluster_9 = 33, 
+               cluster_10 = 38, 
+               cluster_11 = 14, 
+               cluster_12 = c(7, 28), 
+               cluster_13 = 42, 
+               cluster_14 = 43, 
+               cluster_15 = c(26, 47), 
+               cluster_16 = 29, 
+               cluster_17 = 41, 
+               cluster_18 = 18, 
+               cluster_19 = 11)
 
 
 # Creating an empty list to which GEP IDs and DEGs table for each cluster will be stored. 
