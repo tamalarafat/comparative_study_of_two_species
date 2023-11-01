@@ -1,6 +1,6 @@
-projects_dir = "~/Documents/2023/PhD_projects_Yasir/"
+# projects_dir = "~/Documents/2023/PhD_projects_Yasir/"
 
-# projects_dir = "~/Documents/Projects_Yasir/"
+projects_dir = "~/Documents/Projects_Yasir/"
 
 # Load all the functions stored in scripts from the folder housing the scripts
 scripts_list <- list.files(paste0(projects_dir, "scExplorer/Functions"), pattern = "*.R$", full.names = TRUE)
