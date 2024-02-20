@@ -1,0 +1,29 @@
+/* Modify TOC styles */
+#TOC {
+  font-size: 12px; /* Adjust the font size for the TOC */
+  font-weight: bold; /* Set the font weight to bold */
+  margin-top: 20px;
+}
+
+/* Customize the appearance of TOC links */
+#TOC a {
+  text-decoration: none;
+  color: black; /* Set the color of TOC links */
+}
+
+/* Customize the appearance of nested TOC levels */
+#TOC ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 10px; /* Adjust the font size for nested TOC levels */
+}
+
+#TOC ul ul {
+  padding-left: 20px;
+  font-size: 8px; /* Adjust the font size for deeper nested TOC levels */
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 1em;
+}
