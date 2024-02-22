@@ -1,4 +1,0 @@
-"","A.thaliana_p_val","A.thaliana_avg_log2FC","A.thaliana_pct.1","A.thaliana_pct.2","A.thaliana_p_val_adj","C.hirsuta_p_val","C.hirsuta_avg_log2FC","C.hirsuta_pct.1","C.hirsuta_pct.2","C.hirsuta_p_val_adj","max_pval","minimump_p_val","gene_ID"
-"AT1G14150",0,0.877623068909797,0.911,0.523,0,0,0.590682307428907,0.653,0.301,0,0,0,"AT1G14150"
-"AT3G15840",0,0.631551012139866,0.89,0.581,0,0,0.514078504535678,0.58,0.227,0,0,0,"AT3G15840"
-"AT4G35090",0,1.06389698706928,0.96,0.578,0,0,0.859060749698733,0.813,0.507,0,0,0,"AT4G35090"

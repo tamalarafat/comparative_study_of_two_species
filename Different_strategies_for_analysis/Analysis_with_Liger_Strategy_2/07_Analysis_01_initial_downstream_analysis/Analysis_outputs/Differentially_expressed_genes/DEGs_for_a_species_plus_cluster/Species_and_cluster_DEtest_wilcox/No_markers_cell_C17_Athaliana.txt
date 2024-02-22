@@ -1,1 +1,0 @@
-Data Athaliana in cluster 17 have less than 10 cells. For Athaliana, DE analysis between groups or replicates in cluster 17 was not performed.
