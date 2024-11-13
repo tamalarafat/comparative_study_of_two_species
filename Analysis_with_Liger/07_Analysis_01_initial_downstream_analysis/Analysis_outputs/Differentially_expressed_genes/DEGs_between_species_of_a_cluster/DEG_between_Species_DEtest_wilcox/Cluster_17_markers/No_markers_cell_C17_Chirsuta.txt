@@ -1,1 +1,0 @@
-Data Chirsuta is the only group or replicate in cluster 17 and all the cells in this cluster belong to this group. For Chirsuta, DE analysis between groups or replicates in cluster 17 can not be performed.
